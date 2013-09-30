@@ -20,8 +20,8 @@ public class Test {
 			yinsh.put_ring('I', 1,1);
 			yinsh.put_ring('H', 9,2);
 			yinsh.put_ring('J', 1,1);
-			
-			if(yinsh.is_initialised())
+			yinsh.put_maker('D',2,2);
+			//if(yinsh.is_initialised())
 				yinsh.affichetab();
 		}
 		catch(ExeptionYinsh e)

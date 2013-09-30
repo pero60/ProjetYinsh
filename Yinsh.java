@@ -8,14 +8,19 @@ public class Yinsh {
 	
 	private int NbrAnnoNoir=0;
 	private int NbrAnnoBlanc=0;
+	private int NbrMarkNoir=0;
+	private int NbrMarkBlanc=0;
 
 	private int[][] tab = new int[11][11]; 
 	
 	public enum Color{
 		NULL,
 		WHITE,
-		BLACK
-		
+		BLACK,
+		MARKNOIR,
+		MARKBLANC,
+		MARKANNEAUNOIR,
+		MARKANNEAUBLANC
 	}
 	
 	
@@ -23,12 +28,13 @@ public class Yinsh {
 	
 	public Yinsh() {
 		
+		
 		for(int i=0;i<11;i++){
 			for (int j=0;j<11;j++){
 				tab[i][j]=0 ;
 			}
 		}
-		
+				
 	}
 	
 	
@@ -82,4 +88,40 @@ public class Yinsh {
 			}
 		}
 	}
+
+public void put_maker(char c, int Lign, int Couleur) 
+{
+	int g = (int) c - (int)'A';
+	if(tab[g][Lign-1] == 0)
+	{
+		if((Couleur == 1)&&(NbrMarkBlanc<5))
+		{
+			tab[g][Lign-1]=4;
+			NbrMarkBlanc++;
+		}
+		else
+		{
+			if(NbrMarkNoir<5)
+			{
+				tab[g][Lign-1]=3;
+				NbrMarkNoir++;
+			}
+		}
+	}
+}
+
+public void move_ring(char c_actuel, int Lign_actuel, int Couleur_actuel,char c, int Lign, int Couleur)
+{
+	int g_actuel = (int) c_actuel - (int)'A';
+	int g = (int) c - (int)'A';
+	
+	if(Couleur == 1)
+	{
+		if(tab[g_actuel][Lign_actuel-1]==6)
+		{
+			
+		}
+	}
+}
+
 }
