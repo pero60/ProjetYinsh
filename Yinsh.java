@@ -11,33 +11,24 @@ public class Yinsh {
 	private int NbrMarkNoir=0;
 	private int NbrMarkBlanc=0;
 
-	private int[][] tab = new int[11][11]; 
+	private Color[][] tab = new Color[11][11]; 
 	
-	public enum Color{
-		NULL,
-		WHITE,
-		BLACK,
-		MARKNOIR,
-		MARKBLANC,
-		MARKANNEAUNOIR,
-		MARKANNEAUBLANC
-	}
+	
+
 	
 	
 	
-	
-	public Yinsh() {
-		
-		
+//constructeur de la classe Yinch	
+	public Yinsh() 
+	{		
 		for(int i=0;i<11;i++){
 			for (int j=0;j<11;j++){
-				tab[i][j]=0 ;
+				tab[i][j]=Color.NULL ;
 			}
-		}
-				
+		}			
 	}
 	
-	
+//méthode pour savoir si les 5 anneaux des joueurs sont placés
 	public boolean is_initialised()
 	{
 		if((NbrAnnoNoir==4) && (NbrAnnoBlanc==4))//NbrAnnoNoir et NbrAnnoBlanc initialiser a zero
@@ -47,8 +38,9 @@ public class Yinsh {
 	}
 	
 	
-	
-	public Color current_Color(){
+//méthode qui récupere aléatoirement la couleur du joueur qui commence 
+	public Color current_Color()
+	{
 		int   i ;
 		Random rand = new Random();
 		i=rand.nextInt(2);
@@ -59,6 +51,9 @@ public class Yinsh {
 			return Color.BLACK;
 		}
 	}
+	
+	
+//permet d'afficher le tableau	
 	public void affichetab(){
 		for(int s=0;s<11;s++){
 			for(int j=0;j<11;j++)
@@ -68,12 +63,14 @@ public class Yinsh {
 			System.out.println();
 		}
 	}
-	public void put_ring(char c, int Lign, int Couleur) throws ExeptionYinsh
+	
+//méthode qui permet de placer un anneau	
+	public void put_ring(int c, int Lign, Color Couleur) throws ExeptionYinsh
 	{
-		int g = (int) c - (int)'A';
-		if(tab[g][Lign-1] == 0)
+		int g =  c - (int)'A';
+		if(tab[g][Lign-1] == Color.NULL)
 		{
-			if((Couleur == 1)&&(NbrAnnoBlanc<5))
+			if((Couleur == Color.WHITE)&&(NbrAnnoBlanc<5))
 			{
 				tab[g][Lign-1]=Couleur;
 				NbrAnnoBlanc++;
@@ -88,28 +85,31 @@ public class Yinsh {
 			}
 		}
 	}
-
-public void put_maker(char c, int Lign, int Couleur) 
+	
+	
+//méthode qui permet de placer un marqueur
+public void put_maker(char c, int Lign, Color Couleur) 
 {
 	int g = (int) c - (int)'A';
-	if(tab[g][Lign-1] == 0)
+	if(tab[g][Lign-1] == Color.NULL)
 	{
-		if((Couleur == 1)&&(NbrMarkBlanc<5))
+		if((Couleur == Color.WHITE)&&(NbrMarkBlanc<5))
 		{
-			tab[g][Lign-1]=4;
+			tab[g][Lign-1]=Color.MARKBLANC;
 			NbrMarkBlanc++;
 		}
 		else
 		{
 			if(NbrMarkNoir<5)
 			{
-				tab[g][Lign-1]=3;
+				tab[g][Lign-1]=Color.MARKNOIR;
 				NbrMarkNoir++;
 			}
 		}
 	}
 }
 
+//méthode qui permet de déplacer un anneau
 public void move_ring(char c_actuel, int Lign_actuel, int Couleur_actuel,char c, int Lign, int Couleur)
 {
 	int g_actuel = (int) c_actuel - (int)'A';
@@ -117,7 +117,7 @@ public void move_ring(char c_actuel, int Lign_actuel, int Couleur_actuel,char c,
 	
 	if(Couleur == 1)
 	{
-		if(tab[g_actuel][Lign_actuel-1]==6)
+		if(tab[g_actuel][Lign_actuel-1]==Color.MARKANNEAUBLANC)
 		{
 			
 		}
