@@ -1,28 +1,54 @@
+import java.io.IOException;
 import java.util.Scanner;;
 
 
 public class Test {
 
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		Scanner sc=new Scanner(System.in);
 		Yinsh yinsh = new Yinsh();
-		Color color=yinsh.current_Color();
-		System.out.println("la couleur qui commence est :" + color);
-		
+		Color color_exact=yinsh.current_Color();
+		Color color;
+		System.out.println("la couleur qui commence est :" + color_exact);
+		color =color_exact;
 		System.out.println("placer les anneaux");
+		int i=0;
 		try
 		{
-			while(!yinsh.is_initialised())
+			while(yinsh.is_initialised()==false)
 			{
-					System.out.println("Choisir la ligne:");
-					int Lign = sc.nextInt();
-					System.out.println("Choisir la colonne:");
-					int Colone = sc.nextInt();
-					yinsh.put_ring(Colone, Lign, color);
-				
-			}
-			yinsh.affichetab();
+				if(color==Color.BLACK)
+				{
+					while(i<5)
+					{
+						System.out.println("Choisir la ligne:");
+						int Lign = sc.nextInt();
+						System.out.println("Choisir la colonne:");
+						char Colone = (char)System.in.read();
+						yinsh.put_ring( Colone, Lign, color);
+						yinsh.affichetab();
+						i++;
+					}
+					i=0;
+				}
+				else
+				{
+					while(i<5)
+					{
+						System.out.println("Choisir la ligne:");
+						int Lign = sc.nextInt();
+						System.out.println("Choisir la colonne:");
+						char Colone = (char)System.in.read();
+						yinsh.put_ring( Colone, Lign, color);
+						yinsh.affichetab();
+						i++;
+					}
+					i=0;
+				}
+				if(color==Color.WHITE)
+					color=Color.BLACK;
+			}			
 		}
 		catch(ExeptionYinsh e)
 		{
