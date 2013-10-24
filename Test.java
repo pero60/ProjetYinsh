@@ -65,4 +65,4 @@ yinsh.putring('E', 9,2);
 yinsh.putring('I', 1,1);
 yinsh.putring('H', 9,2);
 yinsh.putring('J', 1,1);
-yinsh.putmaker('D',2,2);*/
+yinsh.putMarker('D',2,2);*/

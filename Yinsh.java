@@ -13,13 +13,19 @@ public class Yinsh {
 	private int NbrMarkBlanc=0;
 
 	private final Color[][] tab = new Color[11][12];
-	
-	
 
-	
-	
-	
-//constructeur de la classe Yinch	
+    public enum Color {
+        A,B,C,D,E,F,G,H,I,J,K,
+        NULL,
+        WHITE,
+        BLACK,
+        MARKNOIR,
+        MARKBLANC,
+        MARKANNEAUNOIR,
+        MARKANNEAUBLANC
+
+    }
+    //constructeur de la classe Yinch
 	public Yinsh() 
 	{	
 		tab[0][0]=Color.A;
@@ -80,7 +86,7 @@ public class Yinsh {
 	}
 	
 //méthode qui permet de placer un anneau	
-public void putring(Coordinates coordinates, Color mCouleur) throws ExeptionYinsh
+public void putRing(Coordinates coordinates, Color mCouleur) throws ExeptionYinsh
 {
 
 
@@ -109,7 +115,7 @@ public void putring(Coordinates coordinates, Color mCouleur) throws ExeptionYins
 	
 	
 //méthode qui permet de placer un marqueur
-public void putmaker(Coordinates coordinates, Color couleur)
+public void putMarker(Coordinates coordinates, Color couleur)
 {
 	if(tab[coordinates.g][coordinates.mlign] == Color.NULL)
 	{

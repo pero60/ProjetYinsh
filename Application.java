@@ -1,7 +1,7 @@
+import Yinsh.java;
 public class Application {
 
-    private static void putRing(Yinsh yinsh)
-    {
+    private static void putRing(Yinsh yinsh) throws ExeptionYinsh {
         // chaque joueur place ses anneaux
         yinsh.putRing(new Coordinates('B', 1), Yinsh.Color.BLACK);
         yinsh.putRing(new Coordinates('B', 2), Yinsh.Color.WHITE);

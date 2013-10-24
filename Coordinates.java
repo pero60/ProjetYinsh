@@ -7,7 +7,7 @@ public class Coordinates {
     public Coordinates(int mc, int mlign)
     {
          g =  mc - (int)'A';
-        this=mlign;
+        this.mlign=mlign;
     }
 
 
