@@ -140,7 +140,7 @@ public void moveRing(Coordinates coordinatesdepart,Coordinates coordinatesarrive
 {
 
 	
-	if(tab[coordinatesdepart.g][coordinatesdepart.mlign]==Color.BLACK)
+	if(/*tab[coordinatesdepart.g][coordinatesdepart.mlign]*/color==Color.BLACK)
 	{
 		if(tab[coordinatesarrive.g][coordinatesarrive.mlign]==Color.MARKNOIR)
 		{
@@ -150,12 +150,12 @@ public void moveRing(Coordinates coordinatesdepart,Coordinates coordinatesarrive
 	}
 	
 	
-	if(tab[colonneDepart][ligndepart]==Color.WHITE)
+	if(/*tab[coordinatesdepart.g][coordinatesdepart.mlign]*/color==Color.WHITE)
 	{
-		if(tab[colonneArrive][lignarrive]==Color.MARKBLANC)
+		if(tab[coordinatesarrive.g][coordinatesarrive.mlign]==Color.MARKBLANC)
 		{
-			tab[colonneArrive][lignarrive]=Color.MARKANNEAUBLANC;
-			tab[colonneDepart][ligndepart]=Color.NULL;
+			tab[coordinatesarrive.g][coordinatesarrive.mlign]=Color.MARKANNEAUBLANC;
+			tab[coordinatesdepart.g][coordinatesdepart.mlign]=Color.NULL;
 		}
 	}
 }

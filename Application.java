@@ -46,7 +46,7 @@ public class Application {
         yinsh.moveRing(new Coordinates('F', 8), new Coordinates('E', 8), Yinsh.Color.BLACK);
     }
 
-    private static void removeRowAndRemoveRing(Yinsh yinsh)
+   /* private static void removeRowAndRemoveRing(Yinsh yinsh)
     {
         yinsh.removeRow(new Coordinates('F', 8), new Coordinates('J', 8), Yinsh.Color.BLACK);
         yinsh.removeRing(new Coordinates('B', 1), Yinsh.Color.BLACK);
@@ -65,6 +65,6 @@ public class Application {
         } else {
             System.out.println("L'API Yinsh n'est pas conforme");
         }
-    }
+    }       */
 
 }
