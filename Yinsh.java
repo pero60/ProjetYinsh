@@ -136,17 +136,16 @@ public void putMarker(Coordinates coordinates, Color couleur)
 }
 
 //méthode qui permet de déplacer un anneau
-public void move_ring(char cdepart, int ligndepart,char carrive, int lignarrive)
+public void moveRing(Coordinates coordinatesdepart,Coordinates coordinatesarrive,Color color)
 {
-	int colonneDepart = (int) cdepart - (int)'A';
-	int colonneArrive = (int) carrive - (int)'A';
+
 	
-	if(tab[colonneDepart][ligndepart]==Color.BLACK)
+	if(tab[coordinatesdepart.g][coordinatesdepart.mlign]==Color.BLACK)
 	{
-		if(tab[colonneArrive][lignarrive]==Color.MARKNOIR)
+		if(tab[coordinatesarrive.g][coordinatesarrive.mlign]==Color.MARKNOIR)
 		{
-			tab[colonneArrive][lignarrive]=Color.MARKANNEAUNOIR;
-			tab[colonneDepart][ligndepart]=Color.NULL;
+			tab[coordinatesarrive.g][coordinatesarrive.mlign]=Color.MARKANNEAUNOIR;
+			tab[coordinatesdepart.g][coordinatesdepart.mlign]=Color.NULL;
 		}
 	}
 	
