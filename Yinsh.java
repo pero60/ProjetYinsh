@@ -25,8 +25,11 @@ public class Yinsh {
         MARKANNEAUBLANC
 
     }
+    public enum Type {
+        BLITZ
+    }
     //constructeur de la classe Yinch
-	public Yinsh() 
+	public Yinsh(Color color, Type type)
 	{	
 		tab[0][0]=Color.A;
 		tab[1][0]=Color.B;
