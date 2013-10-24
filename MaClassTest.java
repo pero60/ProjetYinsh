@@ -6,8 +6,8 @@ import  junit.framework.*;
 public class MaClassTest extends TestCase
 {
     public MaClassTest ( String name ) { super ( name ); }
-
-    public void test_histoire1 ()
+    //test hitoire 1
+        public void test_histoire1 ()
     {
         Yinsh yinsh = new Yinsh();
 
