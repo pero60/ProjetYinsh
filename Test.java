@@ -26,7 +26,7 @@ public class Test {
                     int Lign = sc.nextInt();
                     System.out.println("Choisir la colonne:");
                     char Colone = (char)System.in.read();
-                    yinsh.put_ring( Colone, Lign, color);
+                    yinsh.putring( Colone, Lign, color);
                     yinsh.affichetab();
                     color=Color.WHITE;
                     int coordonne=  System.in.read();
@@ -39,7 +39,7 @@ public class Test {
                     System.out.println("Choisir la colonne:");
                     char Colone = (char)System.in.read();
                     int coordonne=  System.in.read();
-                    yinsh.put_ring( Colone, Lign, color);
+                    yinsh.putring( Colone, Lign, color);
                     yinsh.affichetab();
                     color=Color.BLACK;
 				}
@@ -55,14 +55,14 @@ public class Test {
 }
 
 /*
-yinsh.put_ring('C', 1,1);
-yinsh.put_ring('F', 5,2);
-yinsh.put_ring('K', 9,2);
-yinsh.put_ring('A', 1,1);
-yinsh.put_ring('D', 1,1);
-yinsh.put_ring('G', 5,2);
-yinsh.put_ring('E', 9,2);
-yinsh.put_ring('I', 1,1);
-yinsh.put_ring('H', 9,2);
-yinsh.put_ring('J', 1,1);
-yinsh.put_maker('D',2,2);*/
+yinsh.putring('C', 1,1);
+yinsh.putring('F', 5,2);
+yinsh.putring('K', 9,2);
+yinsh.putring('A', 1,1);
+yinsh.putring('D', 1,1);
+yinsh.putring('G', 5,2);
+yinsh.putring('E', 9,2);
+yinsh.putring('I', 1,1);
+yinsh.putring('H', 9,2);
+yinsh.putring('J', 1,1);
+yinsh.putmaker('D',2,2);*/

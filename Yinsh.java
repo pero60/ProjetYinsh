@@ -1,5 +1,6 @@
 import java.util.Random;
 
+
 public class Yinsh {
 	
 	public class java {
@@ -36,6 +37,7 @@ public class Yinsh {
             tab[i]=miseazero(tab[i]);
 		}			
 	}
+
 
 
    public  Color[] miseazero(Color[] tab)
@@ -78,15 +80,15 @@ public class Yinsh {
 	}
 	
 //méthode qui permet de placer un anneau	
-public void put_ring(int mc, int mlign, Color mCouleur) throws ExeptionYinsh
+public void putring(Coordinates coordinates, Color mCouleur) throws ExeptionYinsh
 {
-    int g =  mc - (int)'A';
 
-    if(tab[g][mlign] == Color.NULL)
+
+    if(tab[coordinates.g][coordinates.mlign] == Color.NULL)
     {
         if((mCouleur == Color.WHITE)&&(NbrAnnoBlanc<5))
         {
-            tab[g][mlign]=mCouleur;
+            tab[coordinates.g][coordinates.mlign]=mCouleur;
             NbrAnnoBlanc++;
             System.out.println(NbrAnnoBlanc);
         }
@@ -94,7 +96,7 @@ public void put_ring(int mc, int mlign, Color mCouleur) throws ExeptionYinsh
         {
             if(NbrAnnoNoir<5)
             {
-                tab[g][mlign]=mCouleur;
+                tab[coordinates.g][coordinates.mlign]=mCouleur;
                 NbrAnnoNoir++;
                 System.out.println(NbrAnnoNoir);
             }
@@ -107,21 +109,20 @@ public void put_ring(int mc, int mlign, Color mCouleur) throws ExeptionYinsh
 	
 	
 //méthode qui permet de placer un marqueur
-public void put_maker(char c, int lign, Color couleur)
+public void putmaker(Coordinates coordinates, Color couleur)
 {
-	int g = (int) c - (int)'A';
-	if(tab[g][lign] == Color.NULL)
+	if(tab[coordinates.g][coordinates.mlign] == Color.NULL)
 	{
 		if((couleur == Color.WHITE)&&(NbrMarkBlanc<5))
 		{
-			tab[g][lign]=Color.MARKBLANC;
+			tab[coordinates.g][coordinates.mlign]=Color.MARKBLANC;
 			NbrMarkBlanc++;
 		}
 		else
 		{
 			if(NbrMarkNoir<5)
 			{
-				tab[g][lign]=Color.MARKNOIR;
+				tab[coordinates.g][coordinates.mlign]=Color.MARKNOIR;
 				NbrMarkNoir++;
 			}
 		}

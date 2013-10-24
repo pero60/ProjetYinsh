@@ -10,8 +10,6 @@ public class MaClassTest extends TestCase
         public void test_histoire1 ()
     {
         Yinsh yinsh = new Yinsh();
-
-
         assertTrue (yinsh.current_Color()==Color.BLACK | yinsh.current_Color()==Color.WHITE );
     }
 
