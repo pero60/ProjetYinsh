@@ -51,20 +51,20 @@ public class Application {
         yinsh.removeRow(new Coordinates('F', 8), new Coordinates('J', 8), Yinsh.Color.BLACK);
         yinsh.removeRing(new Coordinates('B', 1), Yinsh.Color.BLACK);
     }
-
+           */
     public static void main(String[] args)
     {
         // le joueur noir commence
         Yinsh yinsh = new Yinsh(Yinsh.Color.BLACK, Yinsh.Type.BLITZ);
 
         putRing(yinsh);
-        putMarkerAndMoveRing(yinsh);
+        putMarkerAndMoveRing(yinsh); /*
         removeRowAndRemoveRing(yinsh);
         if (yinsh.winnerIs() == Yinsh.Color.BLACK) {
             System.out.println("Le joueur noir a gagné !");
         } else {
             System.out.println("L'API Yinsh n'est pas conforme");
-        }
-    }       */
+        }             */
+    }
 
 }
