@@ -1,60 +1,56 @@
 import java.io.IOException;
-import java.util.Scanner;;
+import java.util.Scanner;
 
 
 public class Test {
 
 	
 	public static void main(String[] args) throws IOException {
-		Scanner sc=new Scanner(System.in);
+		//Scanner sc=new Scanner(System.in);
 		Yinsh yinsh = new Yinsh();
-		Color color_exact=yinsh.current_Color();
-		Color color;
-		System.out.println("la couleur qui commence est :" + color_exact);
-		color =color_exact;
+		Color colorExact=yinsh.current_Color();
+		//Color color;
+		System.out.println("la couleur qui commence est :" + colorExact);
+		//color =colorExact;
 		System.out.println("placer les anneaux");
-		int i=0;
-		try
+		//int i=0;
+        //String coordonne=  System.in.toString();
+		/*try
 		{
 			while(yinsh.is_initialised()==false)
 			{
 				if(color==Color.BLACK)
 				{
-					while(i<5)
-					{
-						System.out.println("Choisir la ligne:");
-						int Lign = sc.nextInt();
-						System.out.println("Choisir la colonne:");
-						char Colone = (char)System.in.read();
-						yinsh.put_ring( Colone, Lign, color);
-						yinsh.affichetab();
-						i++;
-					}
-					i=0;
+                    System.out.println("c est au " + color+ " de placer l'anneau" );
+                    System.out.println("Choisir la ligne:");
+                    int Lign = sc.nextInt();
+                    System.out.println("Choisir la colonne:");
+                    char Colone = (char)System.in.read();
+                    yinsh.put_ring( Colone, Lign, color);
+                    yinsh.affichetab();
+                    color=Color.WHITE;
+                    int coordonne=  System.in.read();
 				}
 				else
 				{
-					while(i<5)
-					{
-						System.out.println("Choisir la ligne:");
-						int Lign = sc.nextInt();
-						System.out.println("Choisir la colonne:");
-						char Colone = (char)System.in.read();
-						yinsh.put_ring( Colone, Lign, color);
-						yinsh.affichetab();
-						i++;
-					}
-					i=0;
+                    System.out.println("c est au " + color+ " de placer l'anneau"  );
+                   /* System.out.println("Choisir la ligne:");
+                    int Lign = sc.nextInt();
+                    System.out.println("Choisir la colonne:");
+                    char Colone = (char)System.in.read();
+                    int coordonne=  System.in.read();
+                    yinsh.put_ring( Colone, Lign, color);
+                    yinsh.affichetab();
+                    color=Color.BLACK;
 				}
-				if(color==Color.WHITE)
-					color=Color.BLACK;
-			}			
+			}
+            yinsh.put_maker('D',2,color);
+            yinsh.affichetab();
 		}
 		catch(ExeptionYinsh e)
 		{
 			yinsh.affichetab();
-			
-		}
+		} */
 	}
 }
 
